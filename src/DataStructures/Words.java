@@ -19,7 +19,7 @@ public class Words {
 		String strWord = new String();
 		System.out.println("Proporciona un texto o cadena de caracteres: ");
 		strWord = sc.nextLine();
-		System.out.println("Tu palabra es: " + strWord);
+		System.out.println("Tu frase es: " + strWord);
 		strWord= strWord.toLowerCase();
 		System.out.println();
 		//Determinar si el string contiene las 26 palabras del abecedario		
