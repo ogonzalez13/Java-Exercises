@@ -20,7 +20,8 @@ public class Words {
 		System.out.println("Proporciona un texto o cadena de caracteres: ");
 		strWord = sc.nextLine();
 		System.out.println("Tu palabra es: " + strWord);
-		
+		strWord= strWord.toLowerCase();
+		System.out.println();
 		//Determinar si el string contiene las 26 palabras del abecedario		
 		abcdario(strWord);		
 		
@@ -36,7 +37,7 @@ public class Words {
 	 * @param strWord
 	 */
 	public static void abcdario (String strWord) {
-		int intWordLenght = strWord.length();	
+		int intWordLenght = strWord.length();			
 		ArrayList arrayWord = new ArrayList();		
 		char arrayAbcdario[]= {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 		boolean blnTodas = true;
@@ -58,17 +59,19 @@ public class Words {
 		}	
 		
 		if (blnTodas == true) {		
-			
-			System.out.println ("La cadena de caracteres'" + strWord + "' contiene todas las letras del abecedario.");			
+			System.out.println("****TODAS LAS LETRAS*****");
+			System.out.println ("La cadena de caracteres '" + strWord + "' contiene todas las letras del abecedario.");
+			System.out.println();
 		} else {
-			System.out.println ("La cadena de caracteres'" + strWord + "' NO contiene la letra " + arrayAbcdario[i]);			
+			System.out.println("****TODAS LAS LETRAS*****");
+			System.out.println ("La cadena de caracteres '" + strWord + "' NO contiene la letra " + arrayAbcdario[i]);
+			System.out.println();
 		}
 		
 	}
 	
 	public static void palindromo (String strWord) {
-		String strWithoutSpaces =(strWord.replace(" ",""));
-		strWithoutSpaces= strWithoutSpaces.toLowerCase();
+		String strWithoutSpaces =(strWord.replace(" ",""));		
 		ArrayList<Character> arrayPal = new ArrayList ();
 		ArrayList<Character> arrayInverso = new ArrayList ();
 		
@@ -81,15 +84,19 @@ public class Words {
 	    	arrayInverso.add(strWithoutSpaces.charAt(x));
 	    }				
 		
-		for (int l = 0; l < arrayInverso.size(); l++) { //Pasar el string a ArrayList
+		/*for (int l = 0; l < arrayInverso.size(); l++) { //Pasar el string a ArrayList
 			System.out.print(arrayInverso.get(l));
 		}
 	    System.out.println();
-		System.out.println(strWithoutSpaces);
+		System.out.println(strWithoutSpaces);*/
 		if (arrayPal.equals(arrayInverso)) {
+			System.out.println("******PALINDROMOS*****");
 			System.out.println("La frase: '" + strWord + "' es un palindromo");
+			System.out.println();
 		} else {
+			System.out.println("******PALINDROMOS*****");
 			System.out.println("La frase: '" + strWord + "' NO es un palindromo");
+			System.out.println();
 		}		
 	}
 	
@@ -101,17 +108,19 @@ public class Words {
 			hshWord.add(strWithoutSpaces.charAt(i));
 		}
 		ArrayList<Character> lstCharacters = new ArrayList<Character>(hshWord);
+		System.out.println("*****CONTADOS DE CARACTERES*****");
 		for (int o = 0; o < lstCharacters.size(); o++) {
 			int contador =0;
 			for (int l = 0; l <strWithoutSpaces.length(); l++) {
 				if (lstCharacters.get(o)==strWithoutSpaces.charAt(l)) {
 					contador ++;
 				}
-			}
+			}		
 			System.out.println("El caracter '"+lstCharacters.get(o)+"' aparece " +contador+ " veces");
 		}
 		System.out.println();
-		System.out.println(lstCharacters);
+		//System.out.println();
+		//System.out.println(lstCharacters);
 		
 	}
 }
