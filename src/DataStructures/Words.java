@@ -27,7 +27,7 @@ public class Words {
 		//Determinar si el string es palindromo
 		palindromo (strWord);
 		
-		//Determinar que caracteres son más comunes en un texto
+		//Determinar que caracteres son mï¿½s comunes en un texto
 		caracteres (strWord);
 		
 	}
@@ -96,14 +96,22 @@ public class Words {
 	public static void caracteres (String strWord) {
 		String strWithoutSpaces =(strWord.replace(" ",""));
 		TreeSet<Character> hshWord = new TreeSet();
-		int contador =0;
-		
+				
 		for (int i = 0; i < strWithoutSpaces.length(); i++) { //Obtener los caracteres contenidos en el string
 			hshWord.add(strWithoutSpaces.charAt(i));
 		}
-		List<Character> list = new ArrayList<Character>(hshWord);
+		ArrayList<Character> lstCharacters = new ArrayList<Character>(hshWord);
+		for (int o = 0; o < lstCharacters.size(); o++) {
+			int contador =0;
+			for (int l = 0; l <strWithoutSpaces.length(); l++) {
+				if (lstCharacters.get(o)==strWithoutSpaces.charAt(l)) {
+					contador ++;
+				}
+			}
+			System.out.println("El caracter '"+lstCharacters.get(o)+"' aparece " +contador+ " veces");
+		}
+		System.out.println();
+		System.out.println(lstCharacters);
 		
-		System.out.println(list);
-
 	}
 }
